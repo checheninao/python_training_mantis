@@ -76,7 +76,7 @@ class ProjectHelper:
             rows = proj_table.find_elements_by_tag_name("tr")[2:]
             for row in rows:
                 cells = row.find_elements_by_tag_name("td")
-                name = cells[0].text
+                name = cells[0].find_element_by_tag_name("a").get_attribute("text")
                 status = cells[1].text
                 description = cells[4].text
                 self.project_cache.append(Project(name=name, status=status, description=description))

@@ -1,20 +1,20 @@
 [
   {
+    "status": null,
     "name": "",
     "py/object": "model.project.Project",
-    "status": "development",
     "description": ""
   },
   {
-    "name": "name\\)H{F",
+    "status": "stable",
+    "name": "name+",
     "py/object": "model.project.Project",
-    "status": "development",
-    "description": "descrAG5`h]"
+    "description": "descrbO,MZRvHi L2"
   },
   {
-    "name": "nameIC=YK(0",
+    "status": "stable",
+    "name": "nameUJfe ",
     "py/object": "model.project.Project",
-    "status": "obsolete",
-    "description": "descrW R1=Y{\\k>O"
+    "description": "descrRK k6 2w"
   }
 ]
