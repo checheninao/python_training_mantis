@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 from suds.client import Client
 from suds import WebFault
-
+from model.project import Project
 
 class SoapHelper:
 
@@ -16,10 +15,12 @@ class SoapHelper:
         except WebFault:
             return False
 
-    def projects_list(self, username, password):
+    def get_project_list(self):
+        username = self.app.config['webadmin']['username']
+        password = self.app.config['webadmin']['password']
+        list = []
         client = Client("http://localhost/mantisbt-1.2.19/api/soap/mantisconnect.php?wsdl")
-        try:
-            client.service.mc_enum_projections(username, password)
-            return True
-        except WebFault:
-            return False
+        project_data = client.service.mc_projects_get_user_accessible(username, password)
+        for proj in project_data:
+            list.append(Project(name=proj.name, status=proj.status.name, description=proj.description))
+        return list

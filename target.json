@@ -4,7 +4,7 @@
   },
   "webadmin": {
     "username": "administrator",
-    "password": "root"
+    "password": "test"
   },
   "ftp": {
     "host": "localhost",
